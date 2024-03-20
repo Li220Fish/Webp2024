@@ -1,5 +1,32 @@
  <script>
- window.onload = function() {
+var container = document.getElementById('container');
+
+
+var initialText = "";
+var numLetters = Math.floor(Math.random() * 3); 
+for (var i = 0; i < numLetters; i++) {
+    var randomLetter = String.fromCharCode(97 + Math.floor(Math.random() * 26)); 
+    initialText += randomLetter;
+}
+container.textContent = initialText;
+
+window.addEventListener("keyup", function(e) {
+    console.log(e.key);
+    var str = container.textContent;
+    if (e.key == 'Escape') {
+        container.textContent = "";
+    } else if (e.key == 'Backspace') {
+        container.textContent = str.substring(0, str.length - 1);
+    } else {
+        var newText = str + e.key;
+        var numLetters = Math.floor(Math.random() * 3); 
+        for (var i = 0; i < numLetters; i++) {
+            var randomLetter = String.fromCharCode(97 + Math.floor(Math.random() * 26)); 
+            newText += randomLetter;
+        }
+        container.textContent = newText.substring(1); 
+    }
+});
  }
 </script>
 
