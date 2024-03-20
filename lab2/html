@@ -1,0 +1,9 @@
+ <script>
+ window.onload = function() {
+ }
+</script>
+
+<body>
+  <div id="container" tabindex="0" class="blockquote text-nowrap"></div>
+</body>
+</html>
